@@ -67,4 +67,4 @@ jobs:
       - name: some-cheese
 
       run:
-        path: resource-tutorial/tutorials/basic/task-outputs-to-inputs/show_files.sh
+        path: resource-tutorial/tutorials/basic/task-outputs-to-inputs/show_cheese.sh
