@@ -38,8 +38,8 @@ jobs:
       outputs:
       - name: some-cheese
 
-      run:
-        path: resource-tutorial/tutorials/basic/task-outputs-to-inputs/create_some_cheese.sh
+      # run:
+      #   path: resource-tutorial/tutorials/basic/task-outputs-to-inputs/create_some_cheese.sh
 
   - task: show-some-files
     config:
