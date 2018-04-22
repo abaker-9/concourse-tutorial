@@ -26,20 +26,20 @@ jobs:
       run:
         path: resource-tutorial/tutorials/basic/task-outputs-to-inputs/create_some_files.sh
 
-  - task: create-some-cheese
-    config:
-      platform: linux
-      image_resource:
-        type: docker-image
-        source: {repository: busybox}
+  # - task: create-some-cheese
+  #   config:
+  #     platform: linux
+  #     image_resource:
+  #       type: docker-image
+  #       source: {repository: busybox}
 
-      inputs:
-      - name: resource-tutorial
-      outputs:
-      - name: some-cheese
+  #     inputs:
+  #     - name: resource-tutorial
+  #     outputs:
+  #     - name: some-cheese
 
-      # run:
-      #   path: resource-tutorial/tutorials/basic/task-outputs-to-inputs/create_some_cheese.sh
+  #     run:
+  #       path: resource-tutorial/tutorials/basic/task-outputs-to-inputs/create_some_cheese.sh
 
   - task: show-some-files
     config:
