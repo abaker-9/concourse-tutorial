@@ -3,8 +3,8 @@ resources:
 - name: resource-tutorial
   type: git
   source:
-    uri: https://github.com/starkandwayne/concourse-tutorial.git
-    branch: develop
+    uri: https://github.com/abaker-9/concourse-tutorial.git
+    branch: testing
 
 jobs:
 - name: job-pass-files
