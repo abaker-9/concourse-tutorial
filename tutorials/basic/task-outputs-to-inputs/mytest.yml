@@ -1,0 +1,18 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: microsoft/powershell}
+
+inputs:
+- name: task-outputs-to-inputs
+
+run:
+  path: pwsh
+  args: ['-f', './task-outputs-to-inputs/ec2image_clean.ps1']
+params:
+  ImageName: {{ImageName}}
+  Region: {{Region}}
+  AccessKey: {{AccessKey}}
+  SecretKey: {{SecretKey}}

@@ -1,0 +1,50 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  #source: {repository: busybox}
+  source: {repository: microsoft/powershell}
+
+inputs:
+- name: task-outputs-to-inputs
+# run:
+#   path: pwsh
+#   args: ['-c','dir env:']
+# params:
+#   CAT_NAME: "cats are cool"
+#   DOG_NAME: "dogs are cool"
+
+run:
+  path: pwsh
+  args: ['-f', './task-outputs-to-inputs/ec2image_clean.ps1']
+params:
+  ImageName: {{ImageName}}
+  Region: {{Region}}
+  AccessKey: {{AccessKey}}
+  SecretKey: {{SecretKey}}
+
+
+
+# run:
+#   path: sh
+#   args: ['./task-outputs-to-inputs/create_some_files.sh']
+
+
+
+
+# ---
+
+#   - task: show-some-cheese
+#     config:
+#       platform: linux
+#       image_resource:
+#         type: docker-image
+#         source: {repository: busybox}
+
+#       inputs:
+#       - name: resource-tutorial
+#       - name: some-cheese
+
+#       run:
+#         path: resource-tutorial/tutorials/basic/task-outputs-to-inputs/show_cheese.sh

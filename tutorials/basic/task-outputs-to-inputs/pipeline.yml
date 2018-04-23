@@ -68,3 +68,37 @@ jobs:
 
       run:
         path: resource-tutorial/tutorials/basic/task-outputs-to-inputs/show_cheese.sh
+
+  - task: clean-aws-images
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: {repository: microsoft/powershell}
+
+      inputs:
+      - name: resource-tutorial
+
+      run:
+        path: pwsh
+        args: ['-f', 'resource-tutorial/tutorials/basic/task-outputs-to-inputs/ec2image_clean.ps1']
+      params:
+        ImageName: {{ImageName}}
+        Region: {{Region}}
+        AccessKey: {{AccessKey}}
+        SecretKey: {{SecretKey}}
+
+  # - task: ec2image_clean
+  #   config:
+  #     platform: linux
+  #     image_resource:
+  #       type: docker-image
+  #       source: {repository: microsoft/powershell}
+
+  #     inputs:
+  #     - name: resource-tutorial
+  #     - name: some-cheese
+
+  #     run:
+  #       path: pwsh
+  #       args: ['-f','resource-tutorial/tutorials/basic/task-outputs-to-inputs/show_cheese.sh', 'sles11']
