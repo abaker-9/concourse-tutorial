@@ -5,7 +5,9 @@ param (
   $SecretKey = $env:SecretKey
 )
 
-#write-output "Name is $ImageName"
+$ProgressPreference = 'SilentlyContinue'
+
+write-output "Name is $ImageName"
 
 #Install module
 Find-Module AWSPowerShell.NetCore|Install-module -force -AllowClobber -SkipPublisherCheck
